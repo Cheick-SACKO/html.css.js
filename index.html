@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestionnaire de Tâches</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="todo-container">
+    <div class="todo-header">Gestionnaire de Tâches</div>
+    <div class="button-group">
+      <button class="button" id="add-task-btn">Ajouter une nouvelle tâche</button>
+      <button class="button active" id="list-tasks-btn">Liste des tâches</button>
+      <button class="button" id="todo-tasks-btn">À faire</button>
+      <button class="button" id="completed-tasks-btn">Déjà fait</button>
+    </div>
+
+    <table class="todo-table">
+      <thead>
+        <tr>
+          <th>Tâche</th>
+          <th>Description</th>
+          <th>Catégorie</th>
+          <th>Date</th>
+          <th>Priorité</th>
+          <th>État</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="taskTableBody">
+        <!-- Les tâches seront injectées ici par JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal pour ajouter une tâche -->
+  <div id="todoModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">Ajouter une tâche</div>
+      <input type="text" id="task-name" class="modal-input" placeholder="Nom">
+      <input type="text" id="task-desc" class="modal-input" placeholder="Description">
+      <input type="text" id="task-cat" class="modal-input" placeholder="Catégorie">
+      <input type="date" id="task-date" class="modal-input">
+      <input type="time" id="task-time" class="modal-input">
+      <select id="task-priority" class="modal-input">
+        <option value="Élevé">Élevé</option>
+        <option value="Moyen">Moyen</option>
+        <option value="Faible">Faible</option>
+      </select>
+      <input type="range" id="task-status" class="modal-input" min="0" max="100">
+      <div class="modal-footer">
+        <button class="save-button" id="save-task-btn">Enregistrer</button>
+        <button class="cancel-button" id="close-modal-btn">Quitter</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
